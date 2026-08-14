@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", sans-serif;
+  background: #080808;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #ffffff;
+  color: #080808;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.text-muted {
+  color: #8a8a8a;
+}
+
+.section-padding {
+  padding: 140px 6vw;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 90px 6vw;
+  }
+}
+
+/* ========================================
+   CUSTOM CURSOR
+======================================== */
+
+.custom-cursor-dot,
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  will-change: transform;
+}
+
+/* Small center dot */
+
+.custom-cursor-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+/* Outer follower */
+
+.custom-cursor-follower {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(2px);
+}
+
+/* Cursor text */
+
+.custom-cursor-follower span {
+  font-size: 9px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #080808;
+
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Hide normal cursor on desktop */
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+/* Completely disable custom cursor on touch devices */
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-follower {
+    display: none;
+  }
+
+  body,
+  a,
+  button {
+    cursor: auto;
+  }
+}
+
+/* ========================================
+   PAGE LOADER
+======================================== */
+
+.loader {
+  will-change: transform;
+}
+
+/* Prevent scrolling while loader is active */
+
+body:has(.loader) {
+  overflow: hidden;
+}
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    display: none;
+  }
+
+  body:has(.loader) {
+    overflow: auto;
+  }
+}
