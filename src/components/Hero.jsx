@@ -13,7 +13,7 @@ const Hero = ({ isLoaded }) => {
   // ========================================
   // HERO INTRO + SCROLL ANIMATION
   // ========================================
-
+      
   useEffect(() => {
     if (!isLoaded) return;
 

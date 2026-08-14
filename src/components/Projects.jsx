@@ -16,11 +16,11 @@ const projects = [
   },
   {
     number: "02",
-    title: "EasyCart",
+    title: "EasyMart",
     description:
       "Modern e-commerce frontend with product browsing and API integration.",
     tech: ["React", "Axios", "Tailwind"],
-    link: "#",
+    link: "https://easy-mart-f6pv.vercel.app/",
   },
   {
     number: "03",
@@ -28,7 +28,7 @@ const projects = [
     description:
       "Interactive computer vision experience using React and MediaPipe.",
     tech: ["React", "MediaPipe", "JavaScript"],
-    link: "#",
+    link: "https://nexus-ai-vision.vercel.app/",
   },
   {
     number: "04",
@@ -36,7 +36,7 @@ const projects = [
     description:
       "Student productivity dashboard with weather and Pomodoro features.",
     tech: ["JavaScript", "API", "CSS"],
-    link: "#",
+    link: "https://productivity-dashboard-hxfz.vercel.app/",
   },
 ];
 
